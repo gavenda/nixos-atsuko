@@ -11,14 +11,6 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
-      # Source Code
-      source-code-pro
-      source-sans-pro
-      source-serif-pro
-      # Liberation
-      liberation_ttf
-      # Microsoft
-      corefonts
     ];
 
     fontconfig = {
@@ -26,11 +18,6 @@
       cache32Bit = true;
       hinting.enable = true;
       hinting.autohint = true;
-      defaultFonts = {
-        monospace = [ "Source Code Pro" ];
-        sansSerif = [ "Source Sans Pro" ];
-        serif = [ "Source Serif Pro" ];
-      };
     };
   };
 }
