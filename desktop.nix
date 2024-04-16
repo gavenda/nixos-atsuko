@@ -10,4 +10,7 @@
 
   # Screenshare
   xdg.portal.wlr.enable = true;
+
+  # Exclude XTerm
+  services.xserver.excludePackages = [ pkgs.xterm ];
 }

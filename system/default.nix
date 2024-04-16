@@ -9,9 +9,4 @@
     ./networking.nix
     ./packages.nix
   ];
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
 }

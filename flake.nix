@@ -23,6 +23,7 @@
         ./system
         ./programs
         ./users.nix
+        ./fonts.nix
         ./desktop.nix
         ./virtualization.nix
         aagl.nixosModules.default
