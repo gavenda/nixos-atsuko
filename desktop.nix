@@ -1,6 +1,6 @@
 # Desktop Configuration
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Enable GNOME
