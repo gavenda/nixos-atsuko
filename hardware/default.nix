@@ -16,19 +16,19 @@
   fileSystems."/" =
     { device = "/dev/disk/by-label/NIXROOT";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=root" ];
+      options = [ "compress=zstd" "noatime" "discard=async" "subvol=root" ];
     };
 
   fileSystems."/home" =
     { device = "/dev/disk/by-label/NIXROOT";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=home" ];
+      options = [ "compress=zstd" "noatime" "discard=async" "subvol=home" ];
     };
 
   fileSystems."/nix" =
     { device = "/dev/disk/by-label/NIXROOT";
       fsType = "btrfs";
-      options = [ "compress=zstd" "noatime" "subvol=nix" ];
+      options = [ "compress=zstd" "noatime" "discard=async" "subvol=nix"  ];
     };
 
   fileSystems."/boot" =
@@ -40,7 +40,7 @@
   fileSystems."/swap" =
     { device = "/dev/disk/by-label/NIXROOT";
       fsType = "btrfs";
-      options = [ "noatime" "subvol=swap" ];
+      options = [ "noatime" "discard=async" "subvol=swap" ];
     };
 
   swapDevices = [
@@ -56,4 +56,6 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
+  # Tweaks CPU scheduler for responsiveness over throughput.
+  programs.cfs-zen-tweaks.enable = true;
 }
