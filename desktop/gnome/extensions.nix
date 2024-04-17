@@ -8,6 +8,7 @@
       native-window-placement
       panel-date-format
       astra-monitor
+      appindicator
     ]);
   };
 
