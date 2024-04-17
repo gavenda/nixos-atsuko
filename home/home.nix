@@ -9,9 +9,12 @@
   };
 
   home.packages = with pkgs; [
+    goldwarden
     signal-desktop
     firefox
     discord
+    xdg-utils
+    yt-dlp
   ];
 
   programs.home-manager.enable = true;
