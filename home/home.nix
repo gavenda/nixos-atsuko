@@ -9,8 +9,6 @@
   };
 
   home.packages = with pkgs; [
-    fractal
-    mautrix-meta
     signal-desktop
     firefox
     discord

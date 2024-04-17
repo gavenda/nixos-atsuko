@@ -7,5 +7,6 @@
     ./networking.nix
     ./packages.nix
     ./users.nix
+    ./virtualization.nix
   ];
 }
