@@ -30,15 +30,21 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    adw-gtk3
-    morewaita-icon-theme
-    gnome.dconf-editor
-    # Gnome Circle Apps
-    amberol
-    komikku
-    fragments
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      # Themes
+      adw-gtk3
+      morewaita-icon-theme
+      # Gnome Apps
+      gnome.dconf-editor
+      # Gnome Circle Apps
+      amberol
+      komikku
+      fragments
+      # Utils
+      ffmpegthumbnailer
+    ];
+  };
 
   programs.dconf.profiles = {
     gdm.databases = [{
