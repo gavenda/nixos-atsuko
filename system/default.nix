@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
     ./audio.nix
@@ -8,5 +6,6 @@
     ./i18n.nix
     ./networking.nix
     ./packages.nix
+    ./users.nix
   ];
 }

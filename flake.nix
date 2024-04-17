@@ -22,10 +22,7 @@
         ./hardware
         ./system
         ./programs
-        ./users.nix
-        ./fonts.nix
-        ./desktop.nix
-        ./virtualization.nix
+        ./desktop
         aagl.nixosModules.default
         home-manager.nixosModules.home-manager
         {
