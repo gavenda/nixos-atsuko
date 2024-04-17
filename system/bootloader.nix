@@ -17,7 +17,8 @@
 
     plymouth = {
       enable = true;
-      theme = "bgrt"; 
+      theme = "hexagon_dots_alt";
+      themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["hexagon_dots_alt"];})];
     };
 
     kernelParams = [
