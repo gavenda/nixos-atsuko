@@ -9,7 +9,6 @@
   };
 
   home.packages = with pkgs; [
-    goldwarden
     signal-desktop
     firefox
     discord
