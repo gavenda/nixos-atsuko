@@ -5,6 +5,7 @@
   imports = [ 
     (modulesPath + "/installer/scan/not-detected.nix")
     ./nvidia.nix
+    ./xbox.nix
   ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
