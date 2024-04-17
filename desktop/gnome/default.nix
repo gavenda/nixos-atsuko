@@ -13,10 +13,14 @@
 
   # Enable xdg desktop integration.
   xdg.portal = {
+    configPackages = [ pkgs.xdg-desktop-portal-wlr ];
     enable = true;
     # Screenshare
     wlr.enable = true;
   };
+
+  # Polkit is required for privilege escalation, which seatd uses.
+  security.polkit.enable = true;
 
   services.xserver = {
     desktopManager.gnome.enable = true;
@@ -29,6 +33,7 @@
   environment.systemPackages = with pkgs; [
     adw-gtk3
     morewaita-icon-theme
+    gnome.dconf-editor
     # Gnome Circle Apps
     amberol
     komikku
@@ -53,6 +58,15 @@
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
           gtk-enable-primary-paste = false;
+          icon-theme = "MoreWaita";
+          gtk-theme = "adw-gtk3";
+
+          # Fonts
+          monospace-font-name = "Fira Code 11";
+          document-font-name = "Noto Sans 11";
+          font-name = "Noto Sans 11";
+          font-aliasing = "grayscale";
+          font-hinting = "full";
         };
         "org/gnome/Console" = {
           # Console seems to not be able to actually use the system font correctly,

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   environment = {
@@ -14,6 +14,10 @@
 
   programs.dconf.profiles.user.databases = [{
     settings = with lib.gvariant; {
+      "org/gnome/shell".enabled-extensions =
+        builtins.map
+          (x: x.extensionUuid)
+          (lib.filter (p: p ? extensionUuid) config.environment.systemPackages);
       "org/gnome/shell/extensions/panel-date-format".format = "%Y-%m-%d %H:%M";
     };
   }];
