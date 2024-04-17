@@ -12,7 +12,6 @@
     signal-desktop
     firefox
     discord
-    vscode
   ];
 
   programs.home-manager.enable = true;
