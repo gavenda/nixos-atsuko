@@ -2,6 +2,7 @@
 
 {
   programs.mpv = {
+    enable = true;
     package = pkgs.celluloid;
     scripts = lib.mkForce [ ];
     config = {
